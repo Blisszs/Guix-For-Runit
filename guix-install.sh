@@ -62,6 +62,7 @@ OPENPGP_SIGNING_KEY_ID="3CE464558A84FDC69DB40CFB090B11993D9AEBB5"
 # cannot simply use the HOME environment variable, since there is no guarantee
 # that it points to root's home directory.
 ROOT_HOME="$(echo ~root)"
+START_DIR="$(echo $PWD)"
 
 # ------------------------------------------------------------------------------
 #+UTILITIES
@@ -369,7 +370,7 @@ sys_enable_guix_daemon()
 		  # cp "${ROOT_HOME}/.config/guix/current/lib/runit/system/run" \
 	    { 
 		mkdir /etc/sv/guix-daemon/ &&
-		    cp /root/run \
+		    cp $START_DIR/run \
 		       /etc/sv/guix-daemon/run;
 		  chmod +x /etc/sv/guix-daemon/run;
 		  ln -s /etc/sv/guix-daemon/ /var/service/;

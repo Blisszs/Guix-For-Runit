@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /var/guix/profiles/per-user/root/current-guix/bin/guix-daemon --build-users-group=guixbuild
